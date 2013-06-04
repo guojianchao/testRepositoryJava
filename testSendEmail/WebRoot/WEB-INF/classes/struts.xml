@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="struts2" extends="struts-default" namespace="/">
+		<action name="sendMail" class="sendMail" method="" >
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<action name="addEmailserver" class="sendMail" method="addEmailserver" >
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<action name="initServer" class="sendMail" method="initEmailserver" >
+			<result name="success">/sendEmail.jsp</result>
+		</action>
+		
+		<action name="collectEmail" class="sendMail" method="initEmailserver" >
+			<result name="success">/sendEmail.jsp</result>
+		</action>
+	</package>
+</struts>    
