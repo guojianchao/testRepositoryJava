@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+
+<project name ="test" default="jar" basedir="D:\demo\test">
+<property name="charset" value="utf-8"/>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target name="compile"  depends ="clean">
+        <mkdir dir ="bin"/>
+        <javac srcdir ="src" destdir ="bin"  />
+    </target>
+
+ <target name="jar" depends="compile" >
+           <jar destfile="helloworld.jar" basedir="bin">
+           <manifest>
+            <attribute name="Main-class" value="demo.Demo_test"/>
+            </manifest>
+           
+           </jar>
+    </target>
+
+    <target name="run"  depends="jar">
+<java jar="helloworld.jar" fork="true"/>
+    </target>
+</project> 
