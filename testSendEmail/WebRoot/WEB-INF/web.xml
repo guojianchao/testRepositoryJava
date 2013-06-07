@@ -32,10 +32,10 @@
 		<filter-class>com.email.filter.EncodeFilter</filter-class>
 	</filter>
 
-<!--	<taglib>-->
-<!--		<taglib-uri>/testSendEmail</taglib-uri>-->
-<!--		<taglib-location>/WEB-INF/FCKeditor.tld</taglib-location>-->
-<!--	</taglib>-->
+	<taglib>
+		<taglib-uri>/testSendEmail</taglib-uri>
+		<taglib-location>/WEB-INF/FCKeditor.tld</taglib-location>
+	</taglib>
 
 	<filter-mapping>
 		<filter-name>encodeFilter</filter-name>

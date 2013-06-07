@@ -25,7 +25,7 @@
 		<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	</head>
+	<script type="text/javascript" src="jquery/jquery-1.3.2.min.js"></script></head>
 
 <script type="text/javascript">
 	function checkMailServer(obj){
@@ -40,9 +40,12 @@
 			document.getElementById("label").value="@";
 		}
 	}
+	function onclikCollect(){
+		$("#form").attr("action","collectEmail.action");
+	}
 </script>
 	<body onload="checkMailServer('')">
-		<form action="sendMail.action"
+		<form action="sendMail.action" id="form"
 			style="background-color: orange;">
 			<table>
 				<tr>
@@ -101,12 +104,10 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
-						<input type="submit" value="发送"><input type="button" onclick="window.location='collectEmail.action'" value="接收">
+					<td >
+						<input type="submit" value="发送">
 					</td>
-					<td>
-						<a href="addEmailserver.jsp">添加新的Email服务器地址</a>
-					</td>
+					<td><a href="emailIndex.jsp">返回首页</a></td>
 				</tr>
 			</table>
 

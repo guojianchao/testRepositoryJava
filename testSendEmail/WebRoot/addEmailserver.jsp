@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<tr>
     			<td class="td">Email后缀名称:</td> <td><input type="text" name="emailserver.emailserversuffix"></td> 
     		</tr>
-    		<tr><td class="td"><input type="button" value="返回" onclick="window.location='initServer.action'" > </td><td style="text-align: right;"><input type="submit" value="提交" ></td></tr>
+    		<tr><td class="td"><input type="button" value="返回" onclick="window.location='emailIndex.jsp'" > </td><td style="text-align: right;"><input type="submit" value="提交" ></td></tr>
     	</table>
     </form>
     

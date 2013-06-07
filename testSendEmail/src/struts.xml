@@ -12,10 +12,15 @@
 		
 		<action name="initServer" class="sendMail" method="initEmailserver" >
 			<result name="success">/sendEmail.jsp</result>
+			<result name="collect">/collectLogin.jsp</result>
 		</action>
 		
-		<action name="collectEmail" class="sendMail" method="initEmailserver" >
-			<result name="success">/sendEmail.jsp</result>
+		<action name="collectEmail" class="sendMail" method="collectEmail" >
+			<result name="success">/collectEmail.jsp</result>
+		</action>
+		
+		<action name="readEmail" class="sendMail" method="readEmail" >
+			<result name="success">/readEmail.jsp</result>
 		</action>
 	</package>
 </struts>    

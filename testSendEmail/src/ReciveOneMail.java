@@ -22,7 +22,7 @@
         }   
       
         /**  
-         * 获得发件人的地址和姓
+         * 获得发件人的地址和姓名  
          */  
         public String getFrom() throws Exception {   
             InternetAddress address[] = (InternetAddress[]) mimeMessage.getFrom();   

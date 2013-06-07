@@ -6,12 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.RequestAware;
 
 import sun.org.mozilla.javascript.internal.ContextAction;
 
+import com.email.model.CollectEmailInfo;
 import com.email.model.EmailInfo;
 import com.email.model.Emailserver;
 import com.email.service.EmailService;
@@ -105,8 +107,39 @@ public class EmailAction extends ActionSupport{
 	}
 	
 	public String collectEmail(){
-		this.emailService.getEmailList(emailInfo);
+		emailInfo.setSubject(suffix.substring(1, suffix.length()));
+		Map<String, Object> session = ActionContext.getContext().getSession(); 
 		
+		List<CollectEmailInfo> list= this.emailService.getEmailList(emailInfo);
+		List<CollectEmailInfo> listCollectEmailInfo= this.emailService.getEmailList(emailInfo);
+		for (int i = 0; i < list.size(); i++) {
+			list.get(i).setSubject(list.get(i).getSubject().substring(0, 6)+"......");
+			if(list.get(i).getMessageId()==null||list.get(i).getMessageId().equals("")){
+				listCollectEmailInfo.get(i).setMessageId("нч");
+				list.get(i).setMessageId("нч");
+			}
+		}
+		session.put("listCollectEmailInfo", listCollectEmailInfo);
+		session.put("list", list);
+		
+		return SUCCESS;
+	}
+	
+	
+	public String readEmail(){
+		String str=ServletActionContext.getRequest().getParameter("messageId");
+		Map<String, Object> session = ActionContext.getContext().getSession(); 
+		List<CollectEmailInfo> list=(List<CollectEmailInfo>) session.get("listCollectEmailInfo");
+		CollectEmailInfo ce=new CollectEmailInfo();
+		System.out.println(list.size());
+		for (CollectEmailInfo collectEmailInfo : list) {
+			System.out.println(str+"    "+collectEmailInfo.getMessageId());
+			if(collectEmailInfo.getMessageId().equals(str)){
+				ce=collectEmailInfo;
+				break;
+			}
+		}
+		session.put("collectEmail", ce);
 		
 		return SUCCESS;
 	}
@@ -127,12 +160,16 @@ public class EmailAction extends ActionSupport{
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String initEmailserver(){
+		String str=ServletActionContext.getRequest().getParameter("flag");
 	    list=this.emailService.getEmailserverList(); 
 		System.out.println("========================"+list.size());
 		Map request = (Map)ActionContext.getContext().get("request");
 		request.put("list", list);
-		
+		if(str.equals("1")){
+			return "collect";
+		}else{
 		return SUCCESS;
+		}
 	}
 
 }

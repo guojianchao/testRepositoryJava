@@ -73,7 +73,8 @@ import com.email.model.EmailInfo;
                         String compositeto = personal + "<" + email + ">";   
                         mailaddr += "," + compositeto;   
                     }   
-                    mailaddr = mailaddr.substring(1);   
+                    if(mailaddr.length()>0){
+                    mailaddr = mailaddr.substring(1);}   
                 }   
             } else {   
                 throw new Exception("Error emailaddr type!");   
@@ -308,10 +309,11 @@ import com.email.model.EmailInfo;
         public static List<CollectEmailInfo> getEmailList(EmailInfo email)throws Exception{
         	List<CollectEmailInfo> list=new ArrayList<CollectEmailInfo>();
             Properties props = System.getProperties();  
+            System.out.println(email.getServerAddress()+"+++++++++++++++++++++++++++"+email.getSubject());
             props.put("mail.smtp.host", email.getServerAddress());  
             props.put("mail.smtp.auth", "true");  
             Session session = Session.getDefaultInstance(props, null);  
-            URLName urln = new URLName("pop3", "pop3.163.com", 110, null,  
+            URLName urln = new URLName("pop3", "pop."+email.getSubject(), 110, null,  
                     email.getUser(), email.getPwd());  
             Store store = session.getStore(urln);  
             store.connect();  
