@@ -10,7 +10,7 @@ import com.email.model.CollectEmailInfo;
 import com.email.model.EmailInfo;
       
     /**  
-     * 有一封邮件就需要建立一个ReciveMail对象  
+     * 有一封邮件就需要建立一个ReciveMail对象  08u
      */  
     public class ReciveOneMail {   
         private MimeMessage mimeMessage = null;   
