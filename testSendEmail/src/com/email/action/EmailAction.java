@@ -17,6 +17,7 @@ import com.email.model.CollectEmailInfo;
 import com.email.model.EmailInfo;
 import com.email.model.Emailserver;
 import com.email.service.EmailService;
+import com.email.webserviceclient.HelloServiceService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.inject.Context;
@@ -119,6 +120,7 @@ public class EmailAction extends ActionSupport{
 				list.get(i).setMessageId("涙");
 			}
 		}
+
 		session.put("listCollectEmailInfo", listCollectEmailInfo);
 		session.put("list", list);
 		
@@ -160,6 +162,10 @@ public class EmailAction extends ActionSupport{
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String initEmailserver(){
+		HelloServiceService he=new HelloServiceService();
+		
+		System.out.println(he.getHelloServicePort().getInfo("込込込込込込込込"));
+		
 		String str=ServletActionContext.getRequest().getParameter("flag");
 	    list=this.emailService.getEmailserverList(); 
 		System.out.println("========================"+list.size());
