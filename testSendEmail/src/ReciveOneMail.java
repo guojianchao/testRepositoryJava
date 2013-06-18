@@ -5,7 +5,7 @@
     import javax.mail.internet.*;   
       
     /**  
-     * 有一封邮件就需要建立一个ReciveMail对象  
+     * 有一封邮件就需要建立一个ReciveMail对象  ==================
      */  
     public class ReciveOneMail {   
         private MimeMessage mimeMessage = null;   
