@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+
+	<servlet>
+
+		<description>apache cxf 配置 webservice 服务</description>
+
+		<servlet-name>cxf</servlet-name>
+
+		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+
+		<load-on-startup>1</load-on-startup>
+
+	</servlet>
+
+	<servlet-mapping>
+
+		<servlet-name>cxf</servlet-name>
+
+		<url-pattern>/services/*</url-pattern>
+
+	</servlet-mapping>
+
+
+
+	<listener>
+
+		<description>spring 的监听</description>
+
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+
+	</listener>
+
+	<context-param>
+
+		<description>spring 的配置文件加载路径</description>
+
+		<param-name>contextConfigLocation</param-name>
+
+		<param-value>/WEB-INF/beans.xml </param-value>
+
+	</context-param>
+
+</web-app>
+
+</web-app>
