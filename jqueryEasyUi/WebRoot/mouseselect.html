@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type" />
+<title>无标题 1</title>
+</head>
+
+<body>
+<div style=" font-size:20px">
+我需要在页面中增加一个js代码，当用户用鼠标选择文字（鼠标拖动涂蓝文字）时，会出现一个层，提示与这个选择文字有个的信息
+</div>
+<INPUT TYPE="text" NAME="" value="nihao">
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div id="show"></div>
+</body>
+<script type="text/javascript">
+    //这个我就不说了……
+    function $(id)
+    {
+        return document.getElementById(id);
+    }
+    //当选区改变时，改变选区的属性
+    document.onselectionchange=function(){
+        $("show").innerHTML=document.selection.createRange().text;
+    }; 
+	document.onmouseup = function() {
+		$("show").innerHTML=document.selection.createRange().text;
+	}
+</script>
+
+</html>
+
