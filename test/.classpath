@@ -8,12 +8,20 @@
 	<classpathentry kind="lib" path="D:/jar/jmf.jar"/>
 	<classpathentry kind="lib" path="D:/jar/lucene-spellchecker.jar"/>
 	<classpathentry kind="lib" path="D:/jar/lucene-analyzers.jar"/>
-	<classpathentry kind="lib" path="D:/jar/lucene-core.jar"/>
 	<classpathentry kind="lib" path="D:/jar/lucene-highlighter.jar"/>
 	<classpathentry kind="lib" path="D:/jar/lucene-queries.jar"/>
 	<classpathentry kind="lib" path="D:/jar/lucene-snowball.jar"/>
 	<classpathentry kind="lib" path="D:/jar/QRCode.jar"/>
 	<classpathentry kind="lib" path="D:/jar/quartz-1.6.4.jar" sourcepath="D:/郭建超/tools/quartz-1.6.0.zip"/>
 	<classpathentry kind="lib" path="D:/jar/jbarcode-0.2.8.jar"/>
+	<classpathentry kind="lib" path="D:/jar/commons-httpclient.jar"/>
+	<classpathentry kind="lib" path="D:/郭建超/tools/lucene-3.6.2/lucene-test-framework-3.6.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/郭建超/tools/lucene-3.6.2/lucene-core-3.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/郭建超/tools/lucene-3.6.2/lucene-core-3.6.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/郭建超/tools/lucene-3.6.2/lucene-test-framework-3.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/jar/log4j.jar"/>
+	<classpathentry kind="lib" path="D:/jar/commons-logging.jar"/>
+	<classpathentry kind="lib" path="D:/jar/je-analysis-1.5.1.jar"/>
+	<classpathentry kind="lib" path="D:/jar/paoding-analysis.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
