@@ -5,7 +5,6 @@
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
 	<classpathentry kind="lib" path="D:/jar/htmlparser.jar"/>
 	<classpathentry kind="lib" path="D:/jar/mysql-connector-java-5.1.6-bin.jar"/>
-	<classpathentry kind="lib" path="D:/jar/search-1.0-beta.jar"/>
 	<classpathentry kind="lib" path="D:/jar/commons-logging.jar"/>
 	<classpathentry kind="lib" path="D:/jar/commons-beanutils.jar"/>
 	<classpathentry kind="lib" path="D:/jar/commons-codec-1.4.jar"/>

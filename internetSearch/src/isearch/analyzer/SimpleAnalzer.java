@@ -23,7 +23,8 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.store.LockObtainFailedException;
 import org.apache.lucene.util.Version;
 public class SimpleAnalzer {
-	private Analyzer analyzer = new PaodingAnalyzer();
+	//Analyzer analyzer = new PaodingAnalyzer();
+	
 	
 	/**
 	 *  content文件夹存在两个文件。文件内容分别是
@@ -49,7 +50,8 @@ public class SimpleAnalzer {
 		 //需要建立索引的文档集合的位置  
 		  File docDir = new File("D:/content/");   
 		 //创建索引器(核心)  
-		 IndexWriter standardWriter = new IndexWriter(FSDirectory.open(indexDir), analyzer, true , IndexWriter.MaxFieldLength.LIMITED);//new IndexWriter(FSDirectory.open(indexDir),analyzer, true, IndexWriter.MaxFieldLength.LIMITED);           
+		  Analyzer analyzer = new PaodingAnalyzer();
+		  IndexWriter standardWriter = new IndexWriter(FSDirectory.open(indexDir), analyzer, true , IndexWriter.MaxFieldLength.LIMITED);//new IndexWriter(FSDirectory.open(indexDir),analyzer, true, IndexWriter.MaxFieldLength.LIMITED);           
 		 //不建立复合式索引文件，默认的情况下是复合式的索引文件  
 		 standardWriter.setUseCompoundFile(false);  
 		 //为原文档集合中的每个文档的相关信息建立索引  
@@ -72,22 +74,29 @@ public class SimpleAnalzer {
 		 standardWriter.close();  
 	}
 	
-	private String search(String keyword){
-		File indexDir=new File("D:/luceneIndex/"); 
-		Directory directory;
-		IndexSearcher isearcher = null;
-		//实例化搜索器   
+	public String search(String keyword){
+//		File indexDir=new File("D:/luceneIndex/"); 
+//		Directory directory;
+//		IndexSearcher isearcher = null;
+//		//实例化搜索器   
 		try {
-			directory = FSDirectory.open(indexDir);
-			isearcher = new IndexSearcher(directory);
+//			directory = FSDirectory.open(indexDir);
+//			isearcher = new IndexSearcher(directory);
+			Analyzer analyzer = new PaodingAnalyzer();
+			
+			//对输入的字进行分词//
 			QueryParser parser = new QueryParser(Version.LUCENE_CURRENT, "",
 					analyzer);
 			//使用IKQueryParser查询分析器构造Query对象
-			System.out.println(keyword);
 			Query query = parser.parse(keyword);
 			
 			//搜索相似度最高的5条记录
 			System.out.println(query);
+			
+			
+			
+			
+			
 //			TopDocs topDocs = isearcher.search(query, 2);
 //			System.out.println("命中：" + topDocs.totalHits);
 //			//输出结果
@@ -105,7 +114,7 @@ public class SimpleAnalzer {
 	}
 	public static void main(String[] args) throws IOException {
 		SimpleAnalzer lucene = new SimpleAnalzer();
-		lucene.index();
+		//lucene.index();
 		lucene.search("中国故事会");
 
 	}

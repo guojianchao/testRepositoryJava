@@ -1,5 +1,7 @@
 package isearch.env;
 
+import isearch.analyzer.SimpleAnalzer;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -55,21 +57,23 @@ public class MySqlDataProvider
   @SuppressWarnings({ "rawtypes", "unchecked" })
 public List<Map<String, String>> search(Connection conn, String keyword, int pageNo, int pageSize) throws SQLException
   {
-    String[] skeyword = keyword.replaceAll(" +", " ").split(" ");
+	SimpleAnalzer analzer = new SimpleAnalzer();
+    String[] skeyword = analzer.search(keyword).replaceAll(" +", " ").split(" ");
     StringBuffer sb = new StringBuffer("");
     sb
       .append("select pkey,url,result_text,title from search_index where 1=2 ");
 
     sb.append("or (1=1 ");
     for (String s : skeyword) {
-    	
-      sb.append(" and result_text like '%" + s + "%' ");
+    	System.out.println(s+"111111111111111");
+      sb.append(" or result_text like '%" + s + "%' ");
     }
     sb.append(") ");
 
     sb.append("or (1=1 ");
-    for (String s : skeyword) {System.out.println(s);
-      sb.append(" and title like '%" + s + "%' ");
+    for (String s : skeyword) {
+    	System.out.println(s+"2222222222222222");
+      sb.append(" or title like '%" + s + "%' ");
     }
     sb.append(") ");
     ResultSet rs = conn.createStatement().executeQuery(
