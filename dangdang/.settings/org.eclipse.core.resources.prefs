@@ -1,0 +1,17 @@
+#Thu Jul 18 15:39:44 CST 2013
+eclipse.preferences.version=1
+encoding//WebContent/css/login.css=UTF-8
+encoding//src/com/tarena/entity/Order.java=GBK
+encoding//src/com/tarena/entity/Product.java=GBK
+encoding//src/com/tarena/entity/User.java=GBK
+encoding//src/com/tarena/util/DBConnection.java=GBK
+encoding//src/com/tarena/util/Md5Code.java=GBK
+encoding//src/com/tarena/web/action/cart/CartAction.java=GBK
+encoding//src/com/tarena/web/action/cart/CartFactory.java=GBK
+encoding//src/com/tarena/web/action/cart/CartItem.java=GBK
+encoding//src/com/tarena/web/action/cart/SessionCartServiceImpl.java=GBK
+encoding//src/com/tarena/web/action/main/BookListAction.java=GBK
+encoding//src/com/tarena/web/action/main/PageAction.java=GBK
+encoding//src/com/tarena/web/action/user/RegistAction.java=UTF-8
+encoding//src/com/tarena/web/action/user/VerifyAction.java=UTF-8
+encoding/<project>=UTF-8

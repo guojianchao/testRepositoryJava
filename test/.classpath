@@ -23,5 +23,7 @@
 	<classpathentry kind="lib" path="D:/jar/commons-logging.jar"/>
 	<classpathentry kind="lib" path="D:/jar/je-analysis-1.5.1.jar"/>
 	<classpathentry kind="lib" path="D:/jar/paoding-analysis.jar"/>
+	<classpathentry kind="lib" path="D:/jar/alisoft-xplatform-asf-cache-2.5.1.jar"/>
+	<classpathentry kind="lib" path="D:/jar/junit-3.8.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

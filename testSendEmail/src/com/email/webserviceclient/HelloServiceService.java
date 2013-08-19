@@ -23,7 +23,7 @@ import javax.xml.ws.WebServiceClient;
  * </p>
  * 
  */
-@WebServiceClient(name = "HelloServiceService", targetNamespace = "http://localhost:80/Ebay", wsdlLocation = "http://localhost:80/Ebay?wsdl")
+@WebServiceClient(name = "HelloServiceService", targetNamespace = "http://localhost:90/Ebay", wsdlLocation = "http://localhost:90/Ebay?wsdl")
 public class HelloServiceService extends Service {
 
 	private final static URL HELLOSERVICESERVICE_WSDL_LOCATION;
@@ -37,9 +37,9 @@ public class HelloServiceService extends Service {
 			URL baseUrl;
 			baseUrl = com.email.webserviceclient.HelloServiceService.class
 					.getResource(".");
-			url = new URL(baseUrl, "http://localhost:80/Ebay?wsdl");
+			url = new URL(baseUrl, "http://localhost:90/Ebay?wsdl");
 		} catch (MalformedURLException e) {
-			logger.warning("Failed to create URL for the wsdl Location: 'http://localhost:80/Ebay?wsdl', retrying as a local file");
+			logger.warning("Failed to create URL for the wsdl Location: 'http://localhost:90/Ebay?wsdl', retrying as a local file");
 			logger.warning(e.getMessage());
 		}
 		HELLOSERVICESERVICE_WSDL_LOCATION = url;
@@ -51,7 +51,7 @@ public class HelloServiceService extends Service {
 
 	public HelloServiceService() {
 		super(HELLOSERVICESERVICE_WSDL_LOCATION, new QName(
-				"http://localhost:80/Ebay", "HelloServiceService"));
+				"http://localhost:90/Ebay", "HelloServiceService"));
 	}
 
 	/**
@@ -60,7 +60,7 @@ public class HelloServiceService extends Service {
 	 */
 	@WebEndpoint(name = "HelloServicePort")
 	public HelloService getHelloServicePort() {
-		return super.getPort(new QName("http://localhost:80/Ebay",
+		return super.getPort(new QName("http://localhost:90/Ebay",
 				"HelloServicePort"), HelloService.class);
 	}
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="miniui_java_myeclipse"
+  id="myeclipse.1226715373390"
+  context-root="/miniui_java_myeclipse"
+  j2ee-spec="5.0"
+  archive="miniui_java_myeclipse.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

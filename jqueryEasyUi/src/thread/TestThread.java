@@ -26,7 +26,7 @@ public class TestThread implements Runnable {
 
 	}
 
-	public void sell() {
+	public synchronized void sell() {
 
 		if (Count.getTicket() > 0) {
 			for(int i=0;i<1000;i++){

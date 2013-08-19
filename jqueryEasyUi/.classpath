@@ -22,5 +22,6 @@
 	<classpathentry kind="lib" path="D:/jar/ognl-2.6.11.jar"/>
 	<classpathentry kind="lib" path="D:/jar/jdom.jar"/>
 	<classpathentry kind="lib" path="D:/jar/rome-0.9.jar"/>
+	<classpathentry kind="lib" path="D:/jar/iText-5.0.2.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

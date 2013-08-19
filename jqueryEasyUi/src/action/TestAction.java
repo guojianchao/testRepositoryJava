@@ -29,17 +29,17 @@ public class TestAction extends ActionSupport {
 	public void ajax() throws Exception {
 		 email=(String)ServletActionContext.getRequest().getAttribute("email");
 		 /****************单线程调用********************/
-		 SimpleThread t=new SimpleThread();
-		 t.start();//改成t.run()后为多线程调用
+//		 SimpleThread t=new SimpleThread();
+//		 t.start();//改成t.run()后为多线程调用
 		 /**********************************************/
 		 
 		 /*====================多线程调用=============================*/
 //			if(ServletActionContext.getRequest().getParameter("name").equals("ab"))
-//			new Thread(mt, "a").start();
-//			if(ServletActionContext.getRequest().getParameter("name").equals("ab"))
-//			new Thread(mt, "b").start();
-//			if(ServletActionContext.getRequest().getParameter("name").equals("c"))
-//			new Thread(mt, "c").start();
+			new Thread(mt, "a").start();
+//			if(ServletActionContext.getRequest().getParameter("name").equals("ba"))
+			new Thread(mt, "b").start();
+			if(ServletActionContext.getRequest().getParameter("name").equals("c"))
+			new Thread(mt, "c").start();
 		 /*================================================================*/
 		ServletActionContext.getResponse().setContentType(
 				"text/html;charset=utf-8");

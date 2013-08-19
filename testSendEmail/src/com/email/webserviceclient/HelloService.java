@@ -11,7 +11,7 @@ import javax.jws.soap.SOAPBinding;
  * Generated source version: 2.0
  * 
  */
-@WebService(name = "HelloService", targetNamespace = "http://localhost:80/Ebay")
+@WebService(name = "HelloService", targetNamespace = "http://localhost:90/Ebay")
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public interface HelloService {
 

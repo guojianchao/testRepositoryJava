@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="jquery/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
 </head>
 <body>
+
 	<h2>模态窗口</h2>
 	<div class="demo-info">
 		<div class="demo-tip icon-tip"></div>
@@ -85,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         $(function(){  
             $('#ff').form({  
                 success:function(data){  
-<%--                    $.messager.alert('系统提示', data, 'info');  --%>
+                    $.messager.alert('系统提示', data, 'info');  
                 }  
             });  
         });  

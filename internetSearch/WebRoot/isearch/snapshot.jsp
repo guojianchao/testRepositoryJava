@@ -30,13 +30,12 @@
 	</script>
 	
 		
-	<body onload="lightKeyword()" >
+	<body>
 		<div style="border:0px solid #000000;background:white;width:100%;text-align:center">
 			<div style="border:2px solid #000000;background:#DEDFDE;width:1000px" class="cachestyle">
 				这是对 <a href="<%=map.get("url") %>"><%=map.get("url") %></a> 的页面缓存,缓存时间:<%=map.get("times") %><br>此网页可能已经被更改,点击 <a href="<%=map.get("url") %>">这里</a> 里查看最新内容
 			</div>
 		</div>
-		<%=content %>
   	</body>
   	
   	

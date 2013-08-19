@@ -66,16 +66,16 @@ public List<Map<String, String>> search(Connection conn, String keyword, int pag
     sb.append("or (1=1 ");
     for (String s : skeyword) {
     	System.out.println(s+"111111111111111");
-      sb.append(" or result_text like '%" + s + "%' ");
+      sb.append(" and result_text like '%" + s + "%' ");
     }
     sb.append(") ");
 
     sb.append("or (1=1 ");
     for (String s : skeyword) {
     	System.out.println(s+"2222222222222222");
-      sb.append(" or title like '%" + s + "%' ");
+      sb.append(" and title like '%" + s + "%' ");
     }
-    sb.append(") ");
+    sb.append(")");
     ResultSet rs = conn.createStatement().executeQuery(
       "select count(*) cn from (" + sb.toString() + ")temp");
     rs.next();

@@ -26,6 +26,8 @@ public class MailHelper {
 	}
 	
 	public static void main(String[] args) {
+//		String user= "guojianchao@beijing-sports.com";
+//		System.out.println(user.substring(user.indexOf("@")+1, user.length()));
 		MailHelper.sendMail("mail.beijing-sports.com", "guojianchao@beijing-sports.com", "bst_2013", "guojianchao@beijing-sports.com", "837776282@qq.com", "fjc", "哥写的邮件成了！");
 	}
 
@@ -36,6 +38,7 @@ public class MailHelper {
 		try {
 			// 创建Properties对象
 			Properties props = System.getProperties();
+			System.out.println(props);
 			// 创建信件服务器
 			props.put("mail.smtp.auth", "true");
 			//设置超时时间
